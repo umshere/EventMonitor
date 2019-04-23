@@ -1,4 +1,8 @@
 
+export class EventPage {
+    MainTitle: string;
+    SubHeader: SubHeader
+}
 
 export class SubHeader {
     Title: string;
@@ -11,8 +15,5 @@ export class Link {
     ImageURL: string;
 }
 
-export class EventPage {
-    MainTitle: string;
-    SubHeader: SubHeader
-}
+
 

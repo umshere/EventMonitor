@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SubHeader } from '.././EventPage';
+import { SubHeader, Link } from '.././EventPage';
 
 @Component({
   selector: 'app-sub-header',
@@ -9,14 +9,13 @@ import { SubHeader } from '.././EventPage';
 export class SubHeaderComponent implements OnInit {
   @Input() subHeaderData: SubHeader;
   title: string;
+  links: Link[];
 
   constructor() { }
 
   ngOnInit() {
-    debugger;
-    
-    console.log("title",this.subHeaderData);
-    this.title = "hello " + this.subHeaderData.Title;
+    this.title = this.subHeaderData.Title;
+    this.links = this.subHeaderData.Links;
   }
 
 }
