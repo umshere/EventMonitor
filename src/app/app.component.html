@@ -1,9 +1,12 @@
-
-  <div class="container-fluid">
+<mdb-card>
+  <mdb-card-header>
     <app-main-header [title]="title"></app-main-header>
-    <app-sub-header [subHeaderData]="subHeaderData" class="container"></app-sub-header>
-  </div>
-
-  
+  </mdb-card-header>
+  <mdb-card-body class="row d-flex justify-content-center">
+    <app-sub-header
+      [subHeaderData]="subHeaderData"
+      class="container"
+    ></app-sub-header>
+  </mdb-card-body>
+</mdb-card>
  
-

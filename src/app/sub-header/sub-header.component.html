@@ -2,7 +2,234 @@
     <div class="row">
         <app-subheader-left [title]='title' class="col-sm" sty></app-subheader-left>
         <app-subheader-right [links]='links' class="col-sm"></app-subheader-right>
+        
     </div>
+
+    <div class="row">
+        <mdb-card cascade="true" narrower="true">
+            <!--Card image-->
+            <div class="view view-cascade gradient-card-header purple-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+          
+              <div>
+                <button mdbBtn color="white" outline="true" rounded="true" size="sm" type="button" class="px-2" mdbWavesEffect>
+                  <mdb-icon fas icon="th-large" class="mt-0"></mdb-icon>
+                </button>
+                <button mdbBtn color="white" outline="true" rounded="true" size="sm" type="button" class="px-2" mdbWavesEffect>
+                  <mdb-icon fas icon="columns" class="mt-0"></mdb-icon>
+                </button>
+              </div>
+          
+              <a href="" class="white-text mx-3">Event Monitor</a>
+          
+              <div>
+                <button type="button" mdbBtn color="white" outline="true" rounded="true" size="sm" class="px-2" mdbWavesEffect>
+                  <mdb-icon fas icon="pencil-alt" class="mt-0"></mdb-icon>
+                </button>
+                <button type="button" mdbBtn color="white" outline="true" rounded="true" size="sm" class="px-2" mdbWavesEffect>
+                  <mdb-icon fas icon="times" class="mt-0"></mdb-icon>
+                </button>
+                <button type="button" mdbBtn color="white" outline="true" rounded="true" size="sm" class="px-2" mdbWavesEffect>
+                  <mdb-icon fas fas icon="info-circle-circle" class="mt-0"></mdb-icon>
+                </button>
+              </div>
+          
+            </div>
+            <!--/Card image-->
+          
+            <div class="px-4">
+          
+              <div class="table-wrapper">
+                <!--Table-->
+                <table class="mb-0" mdbTable hover="true">
+          
+                  <!--Table head-->
+                  <thead>
+                  <tr>
+                    <th>
+                      <mdb-checkbox></mdb-checkbox>
+                    </th>
+                    <th class="th-lg">
+                      <a (click)="sortBy('first')">First Name
+                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                      </a>
+                    </th>
+                    <th class="th-lg">
+                      <a (click)="sortBy('last')">Last Name
+                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                      </a>
+                    </th>
+                    <th class="th-lg">
+                      <a (click)="sortBy('username')">Username
+                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                      </a>
+                    </th>
+                    <th class="th-lg">
+                      <a (click)="sortBy('email')">Email
+                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                      </a>
+                    </th>
+                    <th class="th-lg">
+                      <a (click)="sortBy('country')">Country
+                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                      </a>
+                    </th>
+                    <th class="th-lg">
+                      <a (click)="sortBy('city')">City
+                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                      </a>
+                    </th>
+                  </tr>
+                  </thead>
+                  <!--Table head-->
+          
+                  <!--Table body-->
+                  <tbody>
+                  <tr *ngFor="let row of tableData;let i = index">
+                    <th scope="row">
+                      <mdb-checkbox></mdb-checkbox>
+                    </th>
+                    <td>{{row.first}}</td>
+                    <td>{{row.last}}</td>
+                    <td>{{row.username}}</td>
+                    <td>{{row.email}}</td>
+                    <td>{{row.country}}</td>
+                    <td>{{row.city}}</td>
+                  </tr>
+                  </tbody>
+                  <!--Table body-->
+                </table>
+                <!--Table-->
+              </div>
+            </div>
+          </mdb-card>
+    </div>
+
+    <div class="col-lg-4 col-md-12">
+        <!--Card-->
+        <mdb-card cascade="true" narrower="true">
+      
+          <div class="view view-cascade  gradient-card-header purple-gradient">
+            <h2 class="card-header-title">Mattonit</h2>
+            <p>The Boar</p>
+            <div class="text-center">
+              <!--Facebook-->
+              <a type="button" class="btn-floating btn-small waves-light" mdbWavesEffect>
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <!--Twitter-->
+              <a type="button" class="btn-floating btn-small waves-light" mdbWavesEffect>
+                <i class="fab fa-twitter"></i>
+              </a>
+              <!--Google +-->
+              <a type="button" class="btn-floating btn-small waves-light" mdbWavesEffect>
+                <i class="fab fa-google-plus"></i>
+              </a>
+            </div>
+          </div>
+      
+          <mdb-card-body cascade="true" class="text-center">
+            <!--Card content-->
+      
+            <mdb-card-text>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi
+              sunt, quod
+              quibusdam
+              dignissimos neque rem nihil ratione est placeat vel, natus non quos laudantium veritatis sequi.Ut enim
+              ad
+              minima
+              veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.
+            </mdb-card-text>
+      
+          </mdb-card-body>
+          <!--/.Card content-->
+      
+        </mdb-card>
+        <!--/.Card-->
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <!--Card-->
+        <mdb-card cascade="true" wider="true">
+      
+          <div class="view view-cascade gradient-card-header peach-gradient">
+            <h2 class="card-header-title mb-2">Title of the news</h2>
+            <p class="">
+              <i class="far fa-calendar"></i> 26.07.2017</p>
+      
+          </div>
+      
+          <mdb-card-body cascade="true" class="text-center">
+      
+            <mdb-card-text>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi
+              sunt, quod
+              quibusdam
+              dignissimos neque rem nihil ratione est placeat vel, natus non quos laudantium veritatis sequi.Ut enim
+              ad
+              minima
+              veniam, quis nostrum.
+            </mdb-card-text>
+      
+            <a href="#" class="orange-text mt-1 d-flex flex-row-reverse">
+              <h5 class="waves-effect p-2" mdbWavesEffect>Read more
+                <i class="fas fa-chevron-right"></i>
+              </h5>
+            </a>
+      
+          </mdb-card-body>
+          <!--/.Card content-->
+      
+        </mdb-card>
+        <!--/.Card-->
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <!--Card-->
+        <mdb-card cascade="true">
+      
+          <!--Card image-->
+          <div class="view view-cascade gradient-card-header blue-gradient">
+            <h2 class="card-header-title">Marta</h2>
+            <p>Deserve for her own card</p>
+          </div>
+          <!--/Card image-->
+      
+          <mdb-card-body cascade="true" class="text-center">
+            <!--Card content-->
+      
+            <mdb-card-text>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex, recusandae. Facere modi
+              sunt, quod
+              quibusdam
+              dignissimos neque rem nihil ratione est placeat vel, natus non quos laudantium veritatis sequi.Ut enim
+              ad
+              minima
+              veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
+            </mdb-card-text>
+      
+            <!--Twitter-->
+            <a class="icons-sm tw-ic">
+              <i class="fab fa-twitter px-2"> </i>
+            </a>
+            <!--Linkedin-->
+            <a class="icons-sm li-ic">
+              <i class="fab fa-linkedin-in px-2"> </i>
+            </a>
+            <!--Facebook-->
+            <a class="icons-sm fb-ic">
+              <i class="fab fa-facebook-f px-2"> </i>
+            </a>
+            <!--Email-->
+            <a class="icons-sm email-ic">
+              <i class="fas fa-envelope px-2"> </i>
+            </a>
+      
+          </mdb-card-body>
+          <!--/.Card content-->
+      
+        </mdb-card>
+        <!--/.Card-->
+      </div>
 
 
 
