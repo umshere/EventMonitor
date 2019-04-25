@@ -5,7 +5,9 @@
 app-subheader-right.col-sm {
     float: right;
 } */
-
+.btn-rounded {
+    border-radius: 1rem !important;
+}
 .card.card-image {
     -webkit-background-size: cover;
     background-size: cover;

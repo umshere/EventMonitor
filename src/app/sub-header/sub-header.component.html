@@ -1,41 +1,27 @@
-<div class="row">
-    <app-subheader-left [title]='title' class="col-sm" sty></app-subheader-left>
-    <app-subheader-right [links]='links' class="col-sm"></app-subheader-right>
+    <!-- <app-subheader-left [title]='title' class="col-sm" sty></app-subheader-left>
+    <app-subheader-right [links]='links' class="col-sm"></app-subheader-right> -->
 
-</div>
 
-<div class="row d-flex justify-content-center">
+<div class="row d-flex justify-content-center mt-5">
     <mdb-card cascade="true" narrower="true">
         <!--Card image-->
         <div
             class="view view-cascade gradient-card-header purple-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
-
+            <a href="" class="white-text mx-3">Event Monitor</a>
             <div>
-                <button mdbBtn color="white" outline="true" rounded="true" size="sm" type="button" class="px-2"
+                <button mdbBtn color="gray" outline="true" rounded="true" size="sm" type="button" class="px-2"
                     mdbWavesEffect>
-                    <mdb-icon fas icon="th-large" class="mt-0"></mdb-icon>
+                    <mdb-icon fas icon="th-large" class="mt-0"></mdb-icon> {{title}}
                 </button>
-                <button mdbBtn color="white" outline="true" rounded="true" size="sm" type="button" class="px-2"
-                    mdbWavesEffect>
-                    <mdb-icon fas icon="columns" class="mt-0"></mdb-icon>
-                </button>
+                
             </div>
 
-            <a href="" class="white-text mx-3">Event Monitor</a>
+            <div *ngFor="let link of links">
 
-            <div>
-                <button type="button" mdbBtn color="white" outline="true" rounded="true" size="sm" class="px-2"
-                    mdbWavesEffect>
-                    <mdb-icon fas icon="pencil-alt" class="mt-0"></mdb-icon>
-                </button>
-                <button type="button" mdbBtn color="white" outline="true" rounded="true" size="sm" class="px-2"
-                    mdbWavesEffect>
-                    <mdb-icon fas icon="times" class="mt-0"></mdb-icon>
-                </button>
-                <button type="button" mdbBtn color="white" outline="true" rounded="true" size="sm" class="px-2"
-                    mdbWavesEffect>
-                    <mdb-icon fas fas icon="info-circle-circle" class="mt-0"></mdb-icon>
-                </button>
+                    <button [className]="'btn btn-sm btn-rounded ' + link.ImageURL "><i [ngClass]="'fas mr-1 ' + link.Url "></i> {{link.Title}}</button>
+                    <!-- <a [className]="'btn-floating btn-sm waves-effect waves-light ' + link.ImageURL "><i [ngClass]="'fas mr-1 ' + link.Url "></i></a>{{link.Title}} -->
+
+                
             </div>
 
         </div>
