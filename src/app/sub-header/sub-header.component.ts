@@ -12,11 +12,11 @@ export class SubHeaderComponent implements OnInit {
   links: Link[];
 
   tableData: object[] = [
-    { first: 'Mark', last: 'Otto', username: '@mdo', email: 'markotto@gmail.com', country: 'USA', city: 'San Francisco' },
-    { first: 'Jacob', last: 'Thornton', username: '@fat', email: 'jacobt@gmail.com', country: 'France', city: 'Paris' },
-    { first: 'Larry', last: 'the Bird', username: '@twitter', email: 'larrybird@gmail.com', country: 'Germany', city: 'Berlin' },
-    { first: 'Paul', last: 'Topolski', username: '@P_Topolski', email: 'ptopolski@gmail.com', country: 'Poland', city: 'Warsaw' },
-    { first: 'Anna', last: 'Doe', username: '@andy', email: 'annadoe@gmail.com', country: 'Spain', city: 'Madrid' }
+    { first: 'Event1', last: '12:35 1-Oct-2019', username: '@mdo', email: 'markotto@gmail.com', country: 'USA', city: 'San Francisco' },
+    { first: 'Event2', last: '12:35 1-Oct-2019', username: '@fat', email: 'jacobt@gmail.com', country: 'France', city: 'Paris' },
+    { first: 'Event3', last: '12:35 1-Oct-2019', username: '@twitter', email: 'larrybird@gmail.com', country: 'Germany', city: 'Berlin' },
+    { first: 'Event4', last: '12:35 1-Oct-2019', username: '@P_Topolski', email: 'ptopolski@gmail.com', country: 'Poland', city: 'Warsaw' },
+    { first: 'Event5', last: '12:35 1-Oct-2019', username: '@andy', email: 'annadoe@gmail.com', country: 'Spain', city: 'Madrid' }
   ];
   private sorted = false;
 
@@ -42,6 +42,10 @@ export class SubHeaderComponent implements OnInit {
     });
 
     this.sorted = !this.sorted;
+  }
+
+  onSelect(data : any){
+    console.log(data.first);
   }
 
 }

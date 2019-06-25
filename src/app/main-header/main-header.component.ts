@@ -8,7 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MainHeaderComponent implements OnInit {
   @Input() title:string;
 
-  constructor() { }
+  constructor() { 
+    console.log("hell");
+  }
 
   ngOnInit() {
   }

@@ -1,99 +1,111 @@
     <!-- <app-subheader-left [title]='title' class="col-sm" sty></app-subheader-left>
     <app-subheader-right [links]='links' class="col-sm"></app-subheader-right> -->
 
+    <nav>
+        <a routerLink="/event">event</a>
+      </nav>
+    
 
-<div class="row d-flex justify-content-center mt-5">
-    <mdb-card cascade="true" narrower="true" class="w-90">
-        <!--Card image-->
-        <div
-            class="view view-cascade gradient-card-header purple-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
-            <a href="" class="white-text mx-3">Event Monitor</a>
-            <div>
+    <div class="row d-flex justify-content-center mt-5">
+        <mdb-card cascade="true" narrower="true" class="w-90">
+            <!--Card image-->
+            <div
+                class="view view-cascade gradient-card-header purple-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+                <a href="" class="white-text mx-3">Event Monitor</a>
+                <div>
+                    
+                    <button mdbBtn color="gray" outline="true" rounded="true" size="sm" type="button" class="px-2"
+                        mdbWavesEffect>
+                        <i class="fas fa-cog fa-spin"></i>
+                       {{title}}
+                    </button>
+                    
+                </div>
                 
-                <button mdbBtn color="gray" outline="true" rounded="true" size="sm" type="button" class="px-2"
-                    mdbWavesEffect>
-                    <i class="fas fa-cog fa-spin"></i>
-                   {{title}}
-                </button>
-                
+    
+                 
+    
+                <div *ngFor="let link of links">
+    
+                    <!-- + link.ImageURL  -->
+                        <button [className]="'btn btn-sm btn-rounded '"><i [ngClass]="'fas mr-1 ' + link.Url "></i> {{link.Title}}</button>
+                        <!-- <a [className]="'btn-floating btn-sm waves-effect waves-light ' + link.ImageURL "><i [ngClass]="'fas mr-1 ' + link.Url "></i></a>{{link.Title}} -->
+    
+                    
+                </div>
+    
             </div>
-
-            <div *ngFor="let link of links">
-
-                    <button [className]="'btn btn-sm btn-rounded ' + link.ImageURL "><i [ngClass]="'fas mr-1 ' + link.Url "></i> {{link.Title}}</button>
-                    <!-- <a [className]="'btn-floating btn-sm waves-effect waves-light ' + link.ImageURL "><i [ngClass]="'fas mr-1 ' + link.Url "></i></a>{{link.Title}} -->
-
-                
+            <!--/Card image-->
+    
+           
+            <div class="px-4">
+    
+                <div class="table-wrapper">
+                    <!--Table-->
+                    <table class="mb-0" mdbTable hover="true">
+    
+                        <!--Table head-->
+                        <thead>
+                            <tr>
+                                <!-- <th>
+                                    <mdb-checkbox></mdb-checkbox>
+                                </th> -->
+                                <th class="th-lg">
+                                    <a (click)="sortBy('first')">Event Name
+                                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                                    </a>
+                                </th>
+                                <th class="th-lg">
+                                    <a (click)="sortBy('last')">Start Time
+                                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                                    </a>
+                                </th>
+                                <th class="th-lg">
+                                    <a (click)="sortBy('username')">Owner
+                                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                                    </a>
+                                </th>
+                                <!-- <th class="th-lg">
+                                    <a (click)="sortBy('email')">Email
+                                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                                    </a>
+                                </th>
+                                <th class="th-lg">
+                                    <a (click)="sortBy('country')">Country
+                                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                                    </a>
+                                </th>
+                                <th class="th-lg">
+                                    <a (click)="sortBy('city')">City
+                                        <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
+                                    </a>
+                                </th> -->
+                            </tr>
+                        </thead>
+                        <!--Table head-->
+    
+                        <!--Table body-->
+                        <tbody>
+                            <tr *ngFor="let row of tableData;let i = index"
+                                (click)="onSelect(row)">
+                                <!-- <th scope="row">
+                                    <mdb-checkbox></mdb-checkbox>
+                                </th> -->
+                                <td>{{row.first}}</td>
+                                <td>{{row.last}}</td>
+                                <td>{{row.username}}</td>
+                                <!-- <td>{{row.email}}</td>
+                                <td>{{row.country}}</td>
+                                <td>{{row.city}}</td> -->
+                            </tr>
+                        </tbody>
+                        <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
             </div>
+        </mdb-card>
+    </div>
 
-        </div>
-        <!--/Card image-->
 
-        <div class="px-4">
-
-            <div class="table-wrapper">
-                <!--Table-->
-                <table class="mb-0" mdbTable hover="true">
-
-                    <!--Table head-->
-                    <thead>
-                        <tr>
-                            <th>
-                                <mdb-checkbox></mdb-checkbox>
-                            </th>
-                            <th class="th-lg">
-                                <a (click)="sortBy('first')">First Name
-                                    <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
-                                </a>
-                            </th>
-                            <th class="th-lg">
-                                <a (click)="sortBy('last')">Last Name
-                                    <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
-                                </a>
-                            </th>
-                            <th class="th-lg">
-                                <a (click)="sortBy('username')">Username
-                                    <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
-                                </a>
-                            </th>
-                            <th class="th-lg">
-                                <a (click)="sortBy('email')">Email
-                                    <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
-                                </a>
-                            </th>
-                            <th class="th-lg">
-                                <a (click)="sortBy('country')">Country
-                                    <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
-                                </a>
-                            </th>
-                            <th class="th-lg">
-                                <a (click)="sortBy('city')">City
-                                    <mdb-icon fas icon="sort" class="ml-1"></mdb-icon>
-                                </a>
-                            </th>
-                        </tr>
-                    </thead>
-                    <!--Table head-->
-
-                    <!--Table body-->
-                    <tbody>
-                        <tr *ngFor="let row of tableData;let i = index">
-                            <th scope="row">
-                                <mdb-checkbox></mdb-checkbox>
-                            </th>
-                            <td>{{row.first}}</td>
-                            <td>{{row.last}}</td>
-                            <td>{{row.username}}</td>
-                            <td>{{row.email}}</td>
-                            <td>{{row.country}}</td>
-                            <td>{{row.city}}</td>
-                        </tr>
-                    </tbody>
-                    <!--Table body-->
-                </table>
-                <!--Table-->
-            </div>
-        </div>
-    </mdb-card>
-</div>
 
