@@ -7,6 +7,8 @@ import { SubHeaderComponent } from './/sub-header/sub-header.component';
 import { SubheaderLeftComponent } from './sub-header/subheader-left/subheader-left.component';
 import { SubheaderRightComponent } from './sub-header/subheader-right/subheader-right.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { EventDetailsComponent } from './sub-header/event-details/event-details.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { AppRoutingModule } from './/app-routing.module';
     MainHeaderComponent,
     SubHeaderComponent,
     SubheaderLeftComponent,
-    SubheaderRightComponent
+    SubheaderRightComponent,
+    EventDetailsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

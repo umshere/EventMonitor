@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class EventService {
-
+  
   constructor() { }
 
   getEventPage(): Observable<EventPage> {
@@ -18,4 +18,10 @@ export class EventService {
     return eventPage;
 
   }
+
+  // getEventById(arg0: string): import("rxjs").ObservableInput<{}> {
+  //   throw new Error("Method not implemented.");
+  // }
+
+  
 }
